@@ -1,5 +1,3 @@
-import React from "react";
-
 const MovieCard = ({ movie, showDetails }) => (
   <div
     className="p-4 bg-white rounded shadow hover:shadow-lg cursor-pointer"

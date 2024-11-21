@@ -1,19 +1,19 @@
 import { useState } from "react";
-import { OMDB_API_KEY } from "../../constants";
 
 const useFetchMovieDetails = () => {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchMovieDetails = async (movieId) => {
+  const fetchMovieDetails = async (imdbID) => {
     setLoading(true);
     setError(null);
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?i=${movieId}&apikey=${OMDB_API_KEY}`
+        `http://www.omdbapi.com/?i=${imdbID}&apikey=49774136`
       );
       const data = await response.json();
+
       if (data.Response === "True") {
         setSelectedMovie(data);
       } else {
@@ -26,7 +26,11 @@ const useFetchMovieDetails = () => {
     }
   };
 
-  return { selectedMovie, fetchMovieDetails, loading, error };
+  const closeModal = () => {
+    setSelectedMovie(null);
+  };
+
+  return { selectedMovie, fetchMovieDetails, closeModal, loading, error };
 };
 
 export default useFetchMovieDetails;

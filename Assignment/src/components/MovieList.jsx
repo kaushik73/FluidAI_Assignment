@@ -1,11 +1,10 @@
-import React from "react";
 import MovieCard from "./MovieCard";
 
 const MovieList = ({ movies, showDetails }) => {
   if (!movies.length) {
     return (
       <div className="text-center mt-6 text-gray-600">
-        <p>No movies found. Start searching for a movie!</p>
+        <p>Start searching for a movie!</p>
       </div>
     );
   }

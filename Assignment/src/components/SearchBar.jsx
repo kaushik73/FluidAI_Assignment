@@ -1,5 +1,3 @@
-import React from "react";
-
 const SearchBar = ({ searchTerm, setSearchTerm, fetchMovies }) => (
   <div className="flex justify-center mt-6">
     <input
